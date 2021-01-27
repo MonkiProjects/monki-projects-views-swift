@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "monki-map-model",
+        "repositoryURL": "https://github.com/MonkiProjects/monki-map-model.git",
+        "state": {
+          "branch": "master",
+          "revision": "2de3692bb5a980cb089e468ce41da105b7e1dbca",
+          "version": null
+        }
+      },
+      {
+        "package": "monki-projects-model",
+        "repositoryURL": "https://github.com/MonkiProjects/monki-projects-model.git",
+        "state": {
+          "branch": "master",
+          "revision": "66fcef8360e9fdcaf8ce9cdaf676a683cd46821b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
