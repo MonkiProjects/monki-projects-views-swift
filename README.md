@@ -1,3 +1,3 @@
-# monki-map-ios-views
+# monki-projects-ios-views
 
-A description of this package.
+Atom & molecule views used in the iOS Monki Map app.
