@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "FetchImage",
+        "repositoryURL": "https://github.com/kean/FetchImage",
+        "state": {
+          "branch": null,
+          "revision": "3b68b12f25d6060ed102523ebff394c4f8e31cec",
+          "version": "0.3.0"
+        }
+      },
+      {
+        "package": "LoremSwiftum",
+        "repositoryURL": "https://github.com/lukaskubanek/LoremSwiftum.git",
+        "state": {
+          "branch": null,
+          "revision": "eef89bf8b9937462f9c493789609897763b383e2",
+          "version": "2.2.1"
+        }
+      },
+      {
         "package": "monki-map-model",
         "repositoryURL": "https://github.com/MonkiProjects/monki-map-model.git",
         "state": {
@@ -17,6 +35,24 @@
           "branch": "master",
           "revision": "66fcef8360e9fdcaf8ce9cdaf676a683cd46821b",
           "version": null
+        }
+      },
+      {
+        "package": "Nuke",
+        "repositoryURL": "https://github.com/kean/Nuke.git",
+        "state": {
+          "branch": null,
+          "revision": "961597d324949c7003c77d602bfc4d5519b47e81",
+          "version": "9.2.4"
+        }
+      },
+      {
+        "package": "SwiftFlags",
+        "repositoryURL": "https://github.com/BubiDevs/SwiftFlags.git",
+        "state": {
+          "branch": null,
+          "revision": "9862d08828602e96eaafbb680ba0a53ee41c2dab",
+          "version": "1.2.0"
         }
       }
     ]
