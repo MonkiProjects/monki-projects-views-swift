@@ -9,14 +9,16 @@
 import SwiftUI
 import Common
 
-struct CircularProgressView: View {
+// MARK: - View
+
+public struct CircularProgressView: View {
 	
-	private static let defaultColors: [Color] = [.gray, .red, .orange, .yellow, .init(.systemTeal)]
+	public static let defaultColors: [Color] = [.gray, .red, .orange, .yellow, .init(.systemTeal)]
 	
 	@Environment(\.sizeCategory) private var sizeCategory
 	
-	@ScaledMetric var progressBarSize: CGFloat = 48
-	@ScaledMetric var progressBarWidth: CGFloat = 6
+	@ScaledMetric private var progressBarSize: CGFloat = 48
+	@ScaledMetric private var progressBarWidth: CGFloat = 6
 	
 	private static var backgroundColor: Color {
 		#if os(iOS)
@@ -26,15 +28,15 @@ struct CircularProgressView: View {
 		#endif
 	}
 	
-	let value: UInt8
-	let colors: [Color]
+	private let value: UInt8
+	private let colors: [Color]
 	
-	init(value: UInt8, colors: [Color] = Self.defaultColors) {
+	public init(value: UInt8, colors: [Color] = Self.defaultColors) {
 		self.value = value
 		self.colors = colors
 	}
 	
-	var body: some View {
+	public var body: some View {
 		progressBar
 			.foregroundColor(color(for: value))
 			.font(.system(.title3, design: .rounded))
@@ -68,6 +70,8 @@ struct CircularProgressView: View {
 	}
 	
 }
+
+// MARK: - Previews
 
 #if DEBUG
 struct SportLevelView_Previews: PreviewProvider {

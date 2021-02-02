@@ -7,7 +7,9 @@
 //
 
 import SwiftUI
-import Common
+import MonkiProjectsCommonViews
+
+// MARK: - View
 
 public struct UserSmallDetailsView: View {
 	
@@ -60,6 +62,8 @@ public struct UserSmallDetailsView: View {
 	}
 	
 }
+
+// MARK: - Previews
 
 #if DEBUG
 import LoremSwiftum

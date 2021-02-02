@@ -12,16 +12,16 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "MonkiProjectsViews",
-			targets: ["CommonViews", "UserViews"]
+			name: "AllViews",
+			targets: ["MonkiProjectsCommonViews", "MonkiProjectsUserViews"]
 		),
 		.library(
-			name: "MonkiProjectsCommonViews",
-			targets: ["CommonViews"]
+			name: "CommonViews",
+			targets: ["MonkiProjectsCommonViews"]
 		),
 		.library(
-			name: "MonkiProjectsUserViews",
-			targets: ["UserViews"]
+			name: "UserViews",
+			targets: ["MonkiProjectsUserViews"]
 		),
 	],
 	dependencies: [
@@ -36,8 +36,6 @@ let package = Package(
 		.target(
 			name: "Common",
 			dependencies: [
-				.product(name: "MonkiProjectsModel", package: "monki-projects-model"),
-				.product(name: "MonkiMapModel", package: "monki-map-model"),
 				.product(name: "FetchImage", package: "FetchImage"),
 				.product(name: "SwiftFlags", package: "SwiftFlags"),
 				.product(name: "LoremSwiftum", package: "LoremSwiftum"),
@@ -47,26 +45,28 @@ let package = Package(
 			name: "CommonTests",
 			dependencies: ["Common"]
 		),
-		// Common
+		// Common Views
 		.target(
-			name: "CommonViews",
+			name: "MonkiProjectsCommonViews",
 			dependencies: [
 				.target(name: "Common"),
 			]
 		),
 		// Users
 		.target(
-			name: "UserViews",
+			name: "MonkiProjectsUserViews",
 			dependencies: [
 				.target(name: "Common"),
+				.target(name: "MonkiProjectsCommonViews"),
+				.product(name: "Model", package: "monki-projects-model"),
 			],
 			resources: [
 				.process("Resources"),
 			]
 		),
 		.testTarget(
-			name: "UserViewsTests",
-			dependencies: ["UserViews"]
+			name: "MonkiProjectsUserViewsTests",
+			dependencies: ["MonkiProjectsUserViews"]
 		),
 	]
 )

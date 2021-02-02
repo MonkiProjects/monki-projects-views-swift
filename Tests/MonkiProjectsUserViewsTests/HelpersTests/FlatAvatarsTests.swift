@@ -11,13 +11,13 @@ import XCTest
 import UIKit
 #endif
 import Common
-@testable import UserViews
+@testable import MonkiProjectsUserViews
 
 final class FlatAvatarsTests: XCTestCase {
 	
 	func testAllImagesExist() throws {
 		for image in Images.FlatAvatars.allCases {
-			let bundle = try XCTUnwrap(UserViews.bundle)
+			let bundle = try XCTUnwrap(MonkiProjectsUserViews.bundle)
 			#if canImport(UIKit)
 			XCTAssertNotNil(UIImage(named: image.rawValue, in: bundle, with: nil), image.rawValue)
 			#else
