@@ -1,6 +1,6 @@
 //
 //  AvatarFromAssetsView.swift
-//  UserViews
+//  MonkiProjectsUserViews
 //
 //  Created by Rémi Bardon on 14/08/2020.
 //  Copyright © 2020 Monki Projects. All rights reserved.
