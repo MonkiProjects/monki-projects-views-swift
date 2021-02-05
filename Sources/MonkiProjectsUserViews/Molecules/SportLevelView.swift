@@ -23,7 +23,20 @@ public struct SportLevelView: View {
 		self.level = level
 	}
 	
+	@ViewBuilder
 	public var body: some View {
+		#if os(iOS)
+		let alignment: Alignment = sizeCategory.isAccessibilityCategory ? .center : .leading
+		#else
+		let alignment: Alignment = .leading
+		#endif
+		
+		content
+			.frame(maxWidth: .infinity, alignment: alignment)
+	}
+	
+	@ViewBuilder
+	private var content: some View {
 		AccessibleHStack {
 			progressBar
 			label
@@ -34,14 +47,18 @@ public struct SportLevelView: View {
 	
 	@ViewBuilder
 	private var progressBar: some View {
-		VStack(alignment: sizeCategory.isAccessibilityCategory ? .center : .leading) {
-			CircularProgressView(value: level.rawValue)
-		}
+		CircularProgressView(value: level.rawValue)
 	}
 	
 	@ViewBuilder
 	private var label: some View {
-		VStack(alignment: sizeCategory.isAccessibilityCategory ? .center : .leading) {
+		#if os(iOS)
+		let alignment: HorizontalAlignment = sizeCategory.isAccessibilityCategory ? .center : .leading
+		#else
+		let alignment: HorizontalAlignment = .leading
+		#endif
+		
+		VStack(alignment: alignment) {
 			Text(sport.name)
 				.foregroundColor(.secondary)
 			Text(level.title)
@@ -56,36 +73,33 @@ public struct SportLevelView: View {
 struct SportLevelView_Previews: PreviewProvider {
 	
 	static var previews: some View {
-//		let levels: [Sport: SportLevel] = [
-//			.parkour: .professional,
-//			.freerunning: .advanced,
-//			.tricking: .intermediate,
-//			.bouldering: .beginner,
-//			.gymnastics: .neverTried,
-//		]
-//		let examples = ForEach(Array(levels.keys), id: \.self) { sport in
-//			SportLevelView(sport: sport, level: levels[sport]!)
-//		}
-//		let examples = SportLevelView(sport: .parkour, level: .professional)
-//
-//		let preview = List {
-//			ForEach(ContentSizeCategory.previewCategories, id: \.self) { sizeCategory in
-//				Section(header: Text(String(describing: sizeCategory))) {
-//					ScrollView(.horizontal) { examples }
-//						.environment(\.sizeCategory, sizeCategory)
-//				}
-//			}
-//		}
-//
-//		return Group {
-//			preview
-//				.previewDisplayName("Light")
-//			preview
-//				.preferredColorScheme(.dark)
-//				.previewDisplayName("Dark")
-//		}
-//		Text(Sport.parkour.name)
-		Text(Sport.parkour.rawValue)
+		let values: [(sport: Sport, level: SportLevel)] = [
+			(.parkour, .professional),
+			(.freerunning, .advanced),
+			(.tricking, .intermediate),
+			(.bouldering, .beginner),
+			(.gymnastics, .neverTried),
+		]
+		let examples = ForEach(values, id: \.sport) { pair in
+			SportLevelView(sport: pair.sport, level: pair.level)
+		}
+		
+		let preview = List {
+			ForEach(ContentSizeCategory.previewCategories, id: \.self) { sizeCategory in
+				Section(header: Text(String(describing: sizeCategory))) {
+					examples
+				}
+				.environment(\.sizeCategory, sizeCategory)
+			}
+		}
+		
+		return Group {
+			preview
+				.previewDisplayName("Light")
+			preview
+				.preferredColorScheme(.dark)
+				.previewDisplayName("Dark")
+		}
 	}
 	
 } 

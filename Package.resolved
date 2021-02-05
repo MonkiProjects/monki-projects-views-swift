@@ -20,20 +20,11 @@
         }
       },
       {
-        "package": "monki-map-model",
-        "repositoryURL": "https://github.com/MonkiProjects/monki-map-model.git",
-        "state": {
-          "branch": "master",
-          "revision": "17ceecd774f9281e67aa19307e790d281d9b7ee4",
-          "version": null
-        }
-      },
-      {
         "package": "monki-projects-model",
         "repositoryURL": "https://github.com/MonkiProjects/monki-projects-model.git",
         "state": {
           "branch": "master",
-          "revision": "441a834d0912858590ac9c964e8a79c0c8567afc",
+          "revision": "e32148cd59350739dc80bd5075b39f42c4fb2c8b",
           "version": null
         }
       },

@@ -26,7 +26,7 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/MonkiProjects/monki-projects-model.git", .branch("master")),
-		.package(url: "https://github.com/MonkiProjects/monki-map-model.git", .branch("master")),
+//		.package(url: "https://github.com/MonkiProjects/monki-map-model.git", .branch("master")),
 		.package(url: "https://github.com/kean/FetchImage", .upToNextMinor(from: "0.3.0")),
 		.package(url: "https://github.com/BubiDevs/SwiftFlags.git", .upToNextMajor(from: "1.2.0")),
 		.package(url: "https://github.com/lukaskubanek/LoremSwiftum.git", from: "2.2.1"),
