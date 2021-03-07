@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "monki-projects-ios-views",
+	name: "monki-projects-views",
 	defaultLocalization: "en",
 	platforms: [
 		.iOS(.v14),
@@ -25,8 +25,16 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(url: "https://github.com/MonkiProjects/monki-projects-model.git", .branch("master")),
-//		.package(url: "https://github.com/MonkiProjects/monki-map-model.git", .branch("master")),
+		.package(
+			name: "monki-projects-model",
+			url: "https://github.com/MonkiProjects/monki-projects-model-swift.git",
+			.branch("main")
+		),
+		.package(
+			name: "monki-map-model",
+			url: "https://github.com/MonkiProjects/monki-map-model-swift.git",
+			.branch("main")
+		),
 		.package(url: "https://github.com/kean/FetchImage", .upToNextMinor(from: "0.3.0")),
 		.package(url: "https://github.com/BubiDevs/SwiftFlags.git", .upToNextMajor(from: "1.2.0")),
 		.package(url: "https://github.com/lukaskubanek/LoremSwiftum.git", from: "2.2.1"),
@@ -58,7 +66,7 @@ let package = Package(
 			dependencies: [
 				.target(name: "Common"),
 				.target(name: "MonkiProjectsCommonViews"),
-				.product(name: "Model", package: "monki-projects-model"),
+				.product(name: "MonkiProjectsModel", package: "monki-projects-model"),
 			],
 			resources: [
 				.process("Resources"),
@@ -67,6 +75,17 @@ let package = Package(
 		.testTarget(
 			name: "MonkiProjectsUserViewsTests",
 			dependencies: ["MonkiProjectsUserViews"]
+		),
+		// Monki Map
+		.target(
+			name: "MonkiMapViews",
+			dependencies: [
+				.target(name: "MonkiProjectsUserViews"),
+				.product(name: "MonkiMapModel", package: "monki-map-model"),
+			],
+			resources: [
+				.process("Resources"),
+			]
 		),
 	]
 )
