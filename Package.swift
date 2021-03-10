@@ -13,7 +13,7 @@ let package = Package(
 	products: [
 		.library(
 			name: "AllViews",
-			targets: ["MonkiProjectsCommonViews", "MonkiProjectsUserViews"]
+			targets: ["MonkiProjectsCommonViews", "MonkiProjectsUserViews", "MonkiMapViews"]
 		),
 		.library(
 			name: "CommonViews",
@@ -22,6 +22,10 @@ let package = Package(
 		.library(
 			name: "UserViews",
 			targets: ["MonkiProjectsUserViews"]
+		),
+		.library(
+			name: "MonkiMapViews",
+			targets: ["MonkiMapViews"]
 		),
 	],
 	dependencies: [
