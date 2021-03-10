@@ -20,11 +20,11 @@ extension Placemark.Category: WithIcon {
 		case .unknown:
 			return nil
 		case .spot:
-			return "icons8-place_marker"
+			return "icons8-place_marker-colored"
 		case .facility:
-			return "icons8-school_building"
+			return "icons8-school_building-colored"
 		case .miscellaneous:
-			return "icons8-water"
+			return "icons8-water-colored"
 		}
 	}
 	
