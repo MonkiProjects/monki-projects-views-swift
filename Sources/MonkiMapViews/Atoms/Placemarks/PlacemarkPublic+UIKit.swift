@@ -1,6 +1,6 @@
 //
 //  PlacemarkPublic+UIKit.swift
-//  MonkiMapModel
+//  MonkiMapViews
 //
 //  Created by Rémi Bardon on 01/10/2020.
 //  Copyright © 2020 Monki Projects. All rights reserved.

@@ -12,16 +12,12 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "AllViews",
-			targets: ["MonkiProjectsCommonViews", "MonkiProjectsUserViews", "MonkiMapViews"]
+			name: "AllMonkiProjectsViews",
+			targets: ["MonkiProjectsViews", "MonkiMapViews"]
 		),
 		.library(
-			name: "CommonViews",
-			targets: ["MonkiProjectsCommonViews"]
-		),
-		.library(
-			name: "UserViews",
-			targets: ["MonkiProjectsUserViews"]
+			name: "MonkiProjectsViews",
+			targets: ["MonkiProjectsViews"]
 		),
 		.library(
 			name: "MonkiMapViews",
@@ -31,17 +27,12 @@ let package = Package(
 	dependencies: [
 		.package(
 			name: "monki-projects-model",
-			url: "https://github.com/MonkiProjects/monki-projects-model-swift.git",
-			.branch("main")
-		),
-		.package(
-			name: "monki-map-model",
-			url: "https://github.com/MonkiProjects/monki-map-model-swift.git",
-			.branch("main")
+			url: "https://github.com/MonkiProjects/monki-projects-model-swift",
+			.upToNextMinor(from: "0.3.0")
 		),
 		.package(url: "https://github.com/kean/FetchImage", .upToNextMinor(from: "0.3.0")),
-		.package(url: "https://github.com/BubiDevs/SwiftFlags.git", .upToNextMajor(from: "1.2.0")),
-		.package(url: "https://github.com/lukaskubanek/LoremSwiftum.git", from: "2.2.1"),
+		.package(url: "https://github.com/BubiDevs/SwiftFlags", .upToNextMajor(from: "1.2.0")),
+		.package(url: "https://github.com/lukaskubanek/LoremSwiftum", from: "2.2.1"),
 	],
 	targets: [
 		// Common
@@ -57,35 +48,27 @@ let package = Package(
 			name: "CommonTests",
 			dependencies: ["Common"]
 		),
-		// Common Views
+		// Shared Monki Projects Views
 		.target(
-			name: "MonkiProjectsCommonViews",
+			name: "MonkiProjectsViews",
 			dependencies: [
 				.target(name: "Common"),
-			]
-		),
-		// Users
-		.target(
-			name: "MonkiProjectsUserViews",
-			dependencies: [
-				.target(name: "Common"),
-				.target(name: "MonkiProjectsCommonViews"),
 				.product(name: "MonkiProjectsModel", package: "monki-projects-model"),
 			],
 			resources: [
-				.process("Resources"),
+				.process("Users/Resources"),
 			]
 		),
 		.testTarget(
-			name: "MonkiProjectsUserViewsTests",
-			dependencies: ["MonkiProjectsUserViews"]
+			name: "MonkiProjectsViewsTests",
+			dependencies: ["MonkiProjectsViews"]
 		),
-		// Monki Map
+		// Monki Map Views
 		.target(
 			name: "MonkiMapViews",
 			dependencies: [
-				.target(name: "MonkiProjectsUserViews"),
-				.product(name: "MonkiMapModel", package: "monki-map-model"),
+				.target(name: "MonkiProjectsViews"),
+				.product(name: "MonkiMapModel", package: "monki-projects-model"),
 			],
 			resources: [
 				.process("Resources"),

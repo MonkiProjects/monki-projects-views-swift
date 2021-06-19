@@ -1,6 +1,6 @@
 //
-//  UsernameView.swift
-//  MonkiProjectsUserViews
+//  DisplayNameView.swift
+//  MonkiProjectsViews
 //
 //  Created by Rémi Bardon on 28/01/2021.
 //  Copyright © 2021 Monki Projects. All rights reserved.
@@ -11,18 +11,19 @@ import Common
 
 // MARK: - View
 
-struct UsernameView: View {
+struct DisplayNameView: View {
 	
-	private let username: String
+	private let displayName: String
+	private let country: String?
 	
-	init(_ username: String) {
-		self.username = username
+	init(_ displayName: String, country: String? = nil) {
+		self.displayName = displayName
+		self.country = country
 	}
 	
 	var body: some View {
-		Text("@\(username)")
-			.bold()
-			.font(.title3)
+		Text("\(Flag.of(country)) \(displayName)")
+			.font(.title2)
 	}
 	
 }
@@ -30,12 +31,12 @@ struct UsernameView: View {
 #if DEBUG
 import LoremSwiftum
 
-struct UsernameView_Previews: PreviewProvider {
+struct DisplayNameView_Previews: PreviewProvider {
 	
 	static var previews: some View {
 		let previews = List {
 			ForEach(ContentSizeCategory.previewCategories, id: \.self) { sizeCategory in
-				UsernameView(Lorem.fullName.asUsername())
+				DisplayNameView(Lorem.fullName)
 					.environment(\.sizeCategory, sizeCategory)
 			}
 		}

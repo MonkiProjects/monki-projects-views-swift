@@ -1,6 +1,6 @@
 //
 //  PlacemarkKind+Icon.swift
-//  MonkiMapModel
+//  MonkiMapViews
 //
 //  Created by Rémi Bardon on 14/05/2020.
 //  Copyright © 2020 Monki Projects. All rights reserved.
@@ -10,7 +10,7 @@ import Foundation
 import MonkiProjectsModel
 import MonkiMapModel
 
-extension Placemark.Kind: WithIcon, WithGlyph {
+extension Placemark.Kind.ID: WithIcon, WithGlyph {
 	
 	public static var imageBundle: Bundle { .module }
 	

@@ -1,13 +1,12 @@
 //
 //  SportLevelView.swift
-//  MonkiProjectsUserViews
+//  MonkiProjectsViews
 //
 //  Created by Rémi Bardon on 14/10/2020.
 //  Copyright © 2020 Monki Projects. All rights reserved.
 //
 
 import SwiftUI
-import MonkiProjectsCommonViews
 import MonkiProjectsModel
 
 // MARK: - View
