@@ -1,5 +1,5 @@
 //
-//  PlacemarkKind+Icon.swift
+//  PlaceKind+Icon.swift
 //  MonkiMapViews
 //
 //  Created by Rémi Bardon on 14/05/2020.
@@ -10,7 +10,7 @@ import Foundation
 import MonkiProjectsModel
 import MonkiMapModel
 
-extension Placemark.Kind.ID: WithIcon, WithGlyph {
+extension Place.Kind.ID: WithIcon, WithGlyph {
 	
 	public static var imageBundle: Bundle { .module }
 	

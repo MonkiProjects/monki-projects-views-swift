@@ -1,5 +1,5 @@
 //
-//  PlacemarkPublic+UIKit.swift
+//  PlacePublic+UIKit.swift
 //  MonkiMapViews
 //
 //  Created by Rémi Bardon on 01/10/2020.
@@ -10,7 +10,7 @@
 import UIKit
 import MonkiMapModel
 
-extension Placemark.Public {
+extension Place.Public {
 	
 	/// Icons from [Icons8](https://icons8.com)
 	@available(iOS 13.0, *)
@@ -36,7 +36,7 @@ extension Placemark.Public {
 	
 	@available(iOS 13.0, *)
 	public var uiColor: UIColor {
-		return self.category.uiColor(placemarkState: state)
+		return self.category.uiColor(placeState: state)
 	}
 	
 }

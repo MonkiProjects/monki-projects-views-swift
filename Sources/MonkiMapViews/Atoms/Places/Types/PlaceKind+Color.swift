@@ -1,5 +1,5 @@
 //
-//  PlacemarkKind+Color.swift
+//  PlaceKind+Color.swift
 //  MonkiMapViews
 //
 //  Created by Rémi Bardon on 01/10/2020.
@@ -14,29 +14,29 @@ import SwiftUI
 import UIKit
 #endif
 
-public extension Placemark.Kind.ID {
+public extension Place.Kind.ID {
 	
 	#if canImport(SwiftUI)
 	@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 	var color: Color {
-		Placemark.Category.ID(for: self).color
+		Place.Category.ID(for: self).color
 	}
 	
 	@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-	func color(placemarkState: Placemark.State) -> Color {
-		Placemark.Category.ID(for: self).color(placemarkState: placemarkState)
+	func color(placeState: Place.State) -> Color {
+		Place.Category.ID(for: self).color(placeState: placeState)
 	}
 	#endif
 	
 	#if canImport(UIKit)
 	@available(iOS 13.0, *)
 	var uiColor: UIColor {
-		Placemark.Category(for: self).uiColor
+		Place.Category(for: self).uiColor
 	}
 	
 	@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-	func uiColor(placemarkState: Placemark.State) -> UIColor {
-		Placemark.Category(for: self).uiColor(placemarkState: placemarkState)
+	func uiColor(placeState: Place.State) -> UIColor {
+		Place.Category(for: self).uiColor(placeState: placeState)
 	}
 	#endif
 	
