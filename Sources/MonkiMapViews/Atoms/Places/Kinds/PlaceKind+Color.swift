@@ -31,12 +31,12 @@ public extension Place.Kind.ID {
 	#if canImport(UIKit)
 	@available(iOS 13.0, *)
 	var uiColor: UIColor {
-		Place.Category(for: self).uiColor
+		Place.Category.ID(for: self).uiColor
 	}
 	
 	@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 	func uiColor(placeState: Place.State) -> UIColor {
-		Place.Category(for: self).uiColor(placeState: placeState)
+		Place.Category.ID(for: self).uiColor(placeState: placeState)
 	}
 	#endif
 	

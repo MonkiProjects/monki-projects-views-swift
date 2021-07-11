@@ -32,10 +32,10 @@ public extension Place.Category.ID {
 	
 	#if canImport(UIKit)
 	@available(iOS 11.0, *)
-	public var uiColor: UIColor { UIColor(named: rawValue, in: .module, compatibleWith: nil) ?? .systemRed }
+	var uiColor: UIColor { UIColor(named: rawValue, in: .module, compatibleWith: nil) ?? .systemRed }
 	
 	@available(iOS 11.0, *)
-	public func uiColor(placeState: Place.State) -> UIColor {
+	func uiColor(placeState: Place.State) -> UIColor {
 		if placeState.isLocal {
 			return .systemGray
 		} else {
