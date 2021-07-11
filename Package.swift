@@ -28,7 +28,7 @@ let package = Package(
 		.package(
 			name: "monki-projects-model",
 			url: "https://github.com/MonkiProjects/monki-projects-model-swift",
-			.upToNextMinor(from: "0.3.0")
+			.upToNextMinor(from: "0.5.0")
 		),
 		.package(url: "https://github.com/kean/FetchImage", .upToNextMinor(from: "0.3.0")),
 		.package(url: "https://github.com/BubiDevs/SwiftFlags", .upToNextMajor(from: "1.2.0")),
