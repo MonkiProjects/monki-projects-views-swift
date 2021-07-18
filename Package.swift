@@ -71,7 +71,7 @@ let package = Package(
 				.product(name: "MonkiMapModel", package: "monki-projects-model"),
 			],
 			resources: [
-				.process("Resources"),
+				.process("Places/Resources"),
 			]
 		),
 	]
