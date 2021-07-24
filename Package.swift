@@ -57,6 +57,7 @@ let package = Package(
 			],
 			resources: [
 				.process("Users/Resources"),
+				.process("SocialNetworks/Resources"),
 			]
 		),
 		.testTarget(

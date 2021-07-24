@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/MonkiProjects/monki-projects-model-swift",
         "state": {
           "branch": null,
-          "revision": "e5bed426771978a3865101d676205058e27b5fac",
-          "version": "0.5.2"
+          "revision": "8b4cc80f99f2974580c04e2f585622d032c51a75",
+          "version": "0.5.3"
         }
       },
       {
@@ -38,12 +38,12 @@
         }
       },
       {
-        "package": "swift-prefixed-uuid",
-        "repositoryURL": "https://github.com/RemiBardon/swift-prefixed-uuid",
+        "package": "swift-prefixed-type",
+        "repositoryURL": "https://github.com/RemiBardon/swift-prefixed-type",
         "state": {
           "branch": null,
-          "revision": "160a297b20367defda547bf9843d8e65830448c2",
-          "version": "1.0.3"
+          "revision": "f063f75e7bc69a96e74e8e43334859a7390ddeb7",
+          "version": "2.0.0"
         }
       },
       {
