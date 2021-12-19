@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -7,8 +7,7 @@ let package = Package(
 	name: "monki-projects-views",
 	defaultLocalization: "en",
 	platforms: [
-		.iOS(.v14),
-		.macOS(.v11)
+		.iOS(.v15),
 	],
 	products: [
 		.library(
@@ -26,9 +25,10 @@ let package = Package(
 	],
 	dependencies: [
 		.package(
-			name: "monki-projects-model",
-			url: "https://github.com/MonkiProjects/monki-projects-model-swift",
-			.upToNextMinor(from: "0.5.0")
+			name: "monki-projects-dto",
+			url: "https://github.com/MonkiProjects/monki-projects-dto-swift",
+			//.upToNextMinor(from: "0.9.0")
+			.branch("0.9.0-dto")
 		),
 		.package(url: "https://github.com/kean/FetchImage", .upToNextMinor(from: "0.3.0")),
 		.package(url: "https://github.com/BubiDevs/SwiftFlags", .upToNextMajor(from: "1.2.0")),
@@ -53,7 +53,7 @@ let package = Package(
 			name: "MonkiProjectsViews",
 			dependencies: [
 				.target(name: "Common"),
-				.product(name: "MonkiProjectsModel", package: "monki-projects-model"),
+				.product(name: "MonkiProjectsDTO", package: "monki-projects-dto"),
 			],
 			resources: [
 				.process("Users/Resources"),
@@ -69,7 +69,7 @@ let package = Package(
 			name: "MonkiMapViews",
 			dependencies: [
 				.target(name: "MonkiProjectsViews"),
-				.product(name: "MonkiMapModel", package: "monki-projects-model"),
+				.product(name: "MonkiMapDTO", package: "monki-projects-dto"),
 			],
 			resources: [
 				.process("Places/Resources"),

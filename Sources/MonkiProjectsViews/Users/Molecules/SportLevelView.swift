@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import MonkiProjectsModel
+import MonkiProjectsDTO
 
 // MARK: - View
 

@@ -8,7 +8,7 @@
 
 #if canImport(UIKit)
 import UIKit
-import MonkiProjectsModel
+import MonkiProjectsDTO
 
 extension SocialNetwork {
 	

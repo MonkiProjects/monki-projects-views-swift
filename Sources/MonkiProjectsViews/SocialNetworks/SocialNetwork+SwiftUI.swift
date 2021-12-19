@@ -8,7 +8,7 @@
 
 #if canImport(SwiftUI)
 import SwiftUI
-import MonkiProjectsModel
+import MonkiProjectsDTO
 
 @available(iOS 13.0, macOS 10.15, *)
 extension SocialNetwork {

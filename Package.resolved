@@ -15,17 +15,17 @@
         "repositoryURL": "https://github.com/lukaskubanek/LoremSwiftum",
         "state": {
           "branch": null,
-          "revision": "eef89bf8b9937462f9c493789609897763b383e2",
-          "version": "2.2.1"
+          "revision": "8942e732e50458cde5dccf9996afa16f29372853",
+          "version": "2.2.2"
         }
       },
       {
-        "package": "monki-projects-model-swift",
-        "repositoryURL": "https://github.com/MonkiProjects/monki-projects-model-swift",
+        "package": "monki-projects-dto",
+        "repositoryURL": "https://github.com/MonkiProjects/monki-projects-dto-swift",
         "state": {
-          "branch": null,
-          "revision": "8b4cc80f99f2974580c04e2f585622d032c51a75",
-          "version": "0.5.3"
+          "branch": "0.9.0-dto",
+          "revision": "18a4b52d769e32adedcf8890aeb77c8966c31da4",
+          "version": null
         }
       },
       {
@@ -38,12 +38,39 @@
         }
       },
       {
-        "package": "swift-prefixed-type",
+        "package": "swift-algorithms",
+        "repositoryURL": "https://github.com/apple/swift-algorithms",
+        "state": {
+          "branch": null,
+          "revision": "b14b7f4c528c942f121c8b860b9410b2bf57825e",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log.git",
+        "state": {
+          "branch": null,
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
+        }
+      },
+      {
+        "package": "swift-numerics",
+        "repositoryURL": "https://github.com/apple/swift-numerics",
+        "state": {
+          "branch": null,
+          "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "prefixed",
         "repositoryURL": "https://github.com/RemiBardon/swift-prefixed-type",
         "state": {
           "branch": null,
-          "revision": "f063f75e7bc69a96e74e8e43334859a7390ddeb7",
-          "version": "2.0.0"
+          "revision": "18a0bef18e06a9e356d4a50c1914824f904f96d2",
+          "version": "2.0.2"
         }
       },
       {
