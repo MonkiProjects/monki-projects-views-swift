@@ -24,16 +24,26 @@ public struct PlaceDetailsHeader: View {
 			PlaceKindIcon(for: model.placeKind)
 				.frame(width: Self.iconSize, height: Self.iconSize)
 			VStack(alignment: .leading, spacing: 2) {
-				Text(model.placeName ?? "Unnamed place")
+				placeName()
 					.font(.headline)
-				HStack {
-					kindLabel()
-				}
-				.font(.subheadline)
-				.foregroundColor(.secondary)
+				kindLabel()
+					.font(.subheadline)
+					.foregroundColor(.secondary)
 			}
 			Spacer()
 		}
+	}
+	
+	private func placeName() -> Text {
+		let name: String = {
+			if let name = model.placeName, !name.isEmpty {
+				return name
+			} else {
+				return "Unnamed place"
+			}
+		}()
+		
+		return Text(name)
 	}
 	
 	@ViewBuilder
@@ -74,6 +84,8 @@ internal struct PlaceDetailsHeader_Previews: PreviewProvider {
 		List {
 			Group {
 				PlaceDetailsHeader(model: .init(name: Lorem.title, kind: nil))
+				PlaceDetailsHeader(model: .init(name: nil, kind: .trainingSpot))
+				PlaceDetailsHeader(model: .init(name: "", kind: .outdoorParkourPark))
 				PlaceDetailsHeader(model: .init(name: nil, kind: nil))
 				ForEach(Place.Kind.ID.allCases) { kind in
 					PlaceDetailsHeader(model: .init(

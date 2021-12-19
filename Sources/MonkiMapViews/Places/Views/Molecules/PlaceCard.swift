@@ -82,6 +82,9 @@ public struct PlaceCard_Previews: PreviewProvider {
 							detailsHeaderModel: .init(name: nil, kind: .trainingSpot)
 						))
 						PlaceCard(model: .init(
+							detailsHeaderModel: .init(name: "", kind: .outdoorParkourPark)
+						))
+						PlaceCard(model: .init(
 							detailsHeaderModel: .init(name: nil, kind: nil)
 						))
 						ForEach(Place.Kind.ID.allCases, id: \.rawValue) { kind in
