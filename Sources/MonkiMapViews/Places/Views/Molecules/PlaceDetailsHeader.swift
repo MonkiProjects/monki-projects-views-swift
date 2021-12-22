@@ -21,7 +21,7 @@ public struct PlaceDetailsHeader: View {
 	
 	public var body: some View {
 		HStack(spacing: 8) {
-			PlaceKindIcon(for: model.placeKind)
+			PlaceKindIcon(for: model.placeKind, isDraft: model.placeIsDraft)
 				.frame(width: Self.iconSize, height: Self.iconSize)
 			VStack(alignment: .leading, spacing: 2) {
 				placeName()
@@ -66,10 +66,12 @@ extension PlaceDetailsHeader {
 		
 		public let placeName: Place.Name?
 		public let placeKind: Place.Kind.ID?
+		public let placeIsDraft: Bool
 		
-		public init(name: Place.Name?, kind: Place.Kind.ID?) {
+		public init(name: Place.Name?, kind: Place.Kind.ID?, isDraft: Bool = false) {
 			self.placeName = name
 			self.placeKind = kind
+			self.placeIsDraft = isDraft
 		}
 		
 	}
@@ -80,23 +82,47 @@ import LoremSwiftum
 
 internal struct PlaceDetailsHeader_Previews: PreviewProvider {
 	
-	static var previews: some View {
-		List {
-			Group {
-				PlaceDetailsHeader(model: .init(name: Lorem.title, kind: nil))
-				PlaceDetailsHeader(model: .init(name: nil, kind: .trainingSpot))
-				PlaceDetailsHeader(model: .init(name: "", kind: .outdoorParkourPark))
-				PlaceDetailsHeader(model: .init(name: nil, kind: nil))
-				ForEach(Place.Kind.ID.allCases) { kind in
-					PlaceDetailsHeader(model: .init(
-						name: Lorem.title,
-						kind: kind
-					))
-				}
+	private struct Preview<Content: View>: View {
+		
+		@ViewBuilder let views: () -> Content
+		
+		var body: some View {
+			List {
+				views()
+					.padding(.vertical, 4)
 			}
-			.padding(.vertical, 4)
+			.listStyle(.plain)
 		}
-		.listStyle(.plain)
+		
+	}
+	
+	static var previews: some View {
+		Preview {
+			PlaceDetailsHeader(model: .init(name: Lorem.title, kind: nil))
+			PlaceDetailsHeader(model: .init(name: nil, kind: .trainingSpot))
+			PlaceDetailsHeader(model: .init(name: "", kind: .outdoorParkourPark))
+			PlaceDetailsHeader(model: .init(name: nil, kind: nil))
+		}
+		.previewDisplayName("Special cases")
+		Preview {
+			ForEach(Place.Kind.ID.allCases) { kind in
+				PlaceDetailsHeader(model: .init(
+					name: Lorem.title,
+					kind: kind
+				))
+			}
+		}
+		.previewDisplayName("Regular cases")
+		Preview {
+			ForEach(Place.Kind.ID.allCases) { kind in
+				PlaceDetailsHeader(model: .init(
+					name: Lorem.title,
+					kind: kind,
+					isDraft: true
+				))
+			}
+		}
+		.previewDisplayName("Drafts")
 	}
 	
 }
