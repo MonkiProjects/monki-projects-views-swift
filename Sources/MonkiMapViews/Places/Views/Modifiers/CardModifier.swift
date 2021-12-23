@@ -12,6 +12,8 @@ public struct CardModifier: ViewModifier {
 	
 	private static var backgroundColor = Color(.systemBackground)
 	
+	public init() {}
+	
 	public func body(content: Content) -> some View {
 		content
 			.background(Self.backgroundColor)
