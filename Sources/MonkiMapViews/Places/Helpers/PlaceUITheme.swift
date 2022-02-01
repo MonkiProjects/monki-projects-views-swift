@@ -162,7 +162,7 @@ fileprivate struct PlaceUIThemeKey: EnvironmentKey {
 
 extension EnvironmentValues {
 	
-	var placeUiTheme: PlaceUITheme {
+	public var placeUiTheme: PlaceUITheme {
 		get { self[PlaceUIThemeKey.self] }
 		set { self[PlaceUIThemeKey.self] = newValue }
 	}
