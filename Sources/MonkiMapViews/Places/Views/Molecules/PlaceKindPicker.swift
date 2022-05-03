@@ -1,6 +1,6 @@
 //
 //  PlaceKindPicker.swift
-//  MonkiMap
+//  MonkiMapViews
 //
 //  Created by Rémi Bardon on 11/07/2021.
 //  Copyright © 2021 Monki Projects. All rights reserved.

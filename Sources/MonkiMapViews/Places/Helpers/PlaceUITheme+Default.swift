@@ -36,15 +36,18 @@ extension PlaceUITheme {
 		
 		#if canImport(UIKit)
 		override func uiColor(for id: Place.Category.ID) -> UIColor {
-			UIColor(named: "place-categories/\(id.rawValue)", in: .fixedModule, compatibleWith: nil) ?? Self.defaultUiColor
+			UIColor(named: "place-categories/\(id.rawValue)", in: .fixedModule, compatibleWith: nil)
+				?? Self.defaultUiColor
 		}
 		
 		override func uiIcon(for kind: Place.Kind.ID) -> UIImage {
-			UIImage(named: "place-kinds/\(kind.rawValue)", in: .fixedModule, compatibleWith: nil) ?? Self.defaultUiIcon
+			UIImage(named: "place-kinds/\(kind.rawValue)", in: .fixedModule, compatibleWith: nil)
+				?? Self.defaultUiIcon
 		}
 		
 		override func uiGlyph(for kind: Place.Kind.ID) -> UIImage {
-			UIImage(named: "place-kinds/\(kind.rawValue)-glyph", in: .fixedModule, compatibleWith: nil) ?? Self.defaultUiGlyph
+			UIImage(named: "place-kinds/\(kind.rawValue)-glyph", in: .fixedModule, compatibleWith: nil)
+				?? Self.defaultUiGlyph
 		}
 		#endif
 		

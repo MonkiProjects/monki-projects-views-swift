@@ -101,5 +101,5 @@ struct SportLevelView_Previews: PreviewProvider {
 		}
 	}
 	
-} 
+}
 #endif

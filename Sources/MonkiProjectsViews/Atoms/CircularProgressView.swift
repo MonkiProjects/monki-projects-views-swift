@@ -78,8 +78,8 @@ struct CircularProgressView_Previews: PreviewProvider {
 	
 	static var previews: some View {
 		let stack = HStack {
-			ForEach(UInt8(0)...4, id: \.self) { n in
-				CircularProgressView(value: n)
+			ForEach(UInt8(0)...4, id: \.self) { number in
+				CircularProgressView(value: number)
 			}
 		}
 		.padding()
@@ -99,8 +99,8 @@ struct CircularProgressView_Previews: PreviewProvider {
 			previews
 				.previewDisplayName("Default")
 			HStack {
-				ForEach(UInt8(0)...5, id: \.self) { n in
-					CircularProgressView(value: n, colors: customColors)
+				ForEach(UInt8(0)...5, id: \.self) { number in
+					CircularProgressView(value: number, colors: customColors)
 				}
 			}
 			.padding()

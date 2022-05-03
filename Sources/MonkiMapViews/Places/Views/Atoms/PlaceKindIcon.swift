@@ -93,16 +93,19 @@ internal struct PlaceKindIcon_Previews: PreviewProvider {
 		
 		let isDraft: Bool
 		
+		let gridItem = GridItem(
+			.adaptive(minimum: Self.largeSize, maximum: Self.largeSize),
+			spacing: Self.spacing,
+			alignment: .top
+		)
+		
 		init(isDraft: Bool = false) {
 			self.isDraft = isDraft
 		}
 		
 		var body: some View {
 			ScrollView {
-				LazyVGrid(
-					columns: [GridItem(.adaptive(minimum: Self.largeSize, maximum: Self.largeSize), spacing: Self.spacing, alignment: .top)],
-					spacing: Self.spacing
-				) {
+				LazyVGrid(columns: [gridItem], spacing: Self.spacing) {
 					ForEach(Place.Kind.ID.allCases) { kind in
 						IconPreview(kind: kind, isDraft: isDraft, size: Self.largeSize)
 					}

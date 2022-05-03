@@ -1,22 +1,22 @@
 # For more information, visit https://github.com/realm/SwiftLint
 
 disabled_rules:
-  nesting
+  - todo 										# lint
+  - discouraged_optional_boolean 				# idiomatic
+  - private_over_fileprivate 					# idiomatic
 opt_in_rules:
   - trailing_comma
   - file_header
 
 included:
-  - .
-excluded:
-  - .build
-  - Package.swift
+  - Sources
+  - Tests
 
 file_header:
   required_pattern: |
     \/\/
     \/\/  .*?\.swift
-    \/\/  (Common|UserViews)(Tests)?
+    \/\/  (Common|(MonkiMap|MonkiProjects)Views)(Tests)?
     \/\/
     \/\/  Created by .*? on \d{2}\/\d{2}\/\d{4}\.
     \/\/  Copyright (©|\(c\)) 20\d{2} Monki Projects\. All rights reserved\.
