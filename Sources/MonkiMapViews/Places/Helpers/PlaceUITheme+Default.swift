@@ -22,29 +22,29 @@ extension PlaceUITheme {
 		
 		#if canImport(SwiftUI)
 		override func colorForCategory(_ category: Place.Category.ID) -> Color {
-			Color("place-categories/\(category.rawValue)", bundle: .module)
+			Color("place-categories/\(category.rawValue)", bundle: .fixedModule)
 		}
 		
 		override func iconForKind(_ kind: Place.Kind.ID) -> Image {
-			Image("place-kinds/\(kind.rawValue)", bundle: .module)
+			Image("place-kinds/\(kind.rawValue)", bundle: .fixedModule)
 		}
 		
 		override func glyphForKind(_ kind: Place.Kind.ID) -> Image {
-			Image("place-kinds/\(kind.rawValue)-glyph", bundle: .module)
+			Image("place-kinds/\(kind.rawValue)-glyph", bundle: .fixedModule)
 		}
 		#endif
 		
 		#if canImport(UIKit)
 		override func uiColor(for id: Place.Category.ID) -> UIColor {
-			UIColor(named: "place-categories/\(id.rawValue)", in: .module, compatibleWith: nil) ?? Self.defaultUiColor
+			UIColor(named: "place-categories/\(id.rawValue)", in: .fixedModule, compatibleWith: nil) ?? Self.defaultUiColor
 		}
 		
 		override func uiIcon(for kind: Place.Kind.ID) -> UIImage {
-			UIImage(named: "place-kinds/\(kind.rawValue)", in: .module, compatibleWith: nil) ?? Self.defaultUiIcon
+			UIImage(named: "place-kinds/\(kind.rawValue)", in: .fixedModule, compatibleWith: nil) ?? Self.defaultUiIcon
 		}
 		
 		override func uiGlyph(for kind: Place.Kind.ID) -> UIImage {
-			UIImage(named: "place-kinds/\(kind.rawValue)-glyph", in: .module, compatibleWith: nil) ?? Self.defaultUiGlyph
+			UIImage(named: "place-kinds/\(kind.rawValue)-glyph", in: .fixedModule, compatibleWith: nil) ?? Self.defaultUiGlyph
 		}
 		#endif
 		

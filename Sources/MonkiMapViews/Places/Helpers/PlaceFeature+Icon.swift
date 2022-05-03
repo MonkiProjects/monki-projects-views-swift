@@ -33,13 +33,13 @@ extension Place.Feature {
 	
 	#if canImport(UIKit)
 	public var icon: Image {
-		Image(self.id, bundle: .module)
+		Image(self.id, bundle: .fixedModule)
 	}
 	#else
 	@ViewBuilder
 	public func icon(orPlaceholder: Bool = false) -> some View {
 		if self.hasSystemIcon {
-			Image(self.id, bundle: .module)
+			Image(self.id, bundle: .fixedModule)
 		} else {
 			AsyncImage(url: self.iconUrl) { phase in
 				switch phase {

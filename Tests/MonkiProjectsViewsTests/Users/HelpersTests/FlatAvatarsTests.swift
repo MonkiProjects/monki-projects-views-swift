@@ -17,7 +17,7 @@ final class FlatAvatarsTests: XCTestCase {
 	
 	func testAllImagesExist() throws {
 		for image in Images.FlatAvatars.allCases {
-			let bundle = try XCTUnwrap(MonkiProjectsViews.bundle)
+			let bundle = try XCTUnwrap(MonkiProjectsViews.localBundle)
 			#if canImport(UIKit)
 			XCTAssertNotNil(UIImage(named: image.rawValue, in: bundle, with: nil), image.rawValue)
 			#else

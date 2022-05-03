@@ -21,7 +21,7 @@ struct AvatarFromAssetsView: View {
 	}
 	
 	var body: some View {
-		Image(assetName, bundle: .module)
+		Image(assetName, bundle: .fixedModule)
 			.resizable()
 			.scaledToFill()
 			.avatar(size: size)
